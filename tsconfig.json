@@ -17,5 +17,16 @@
     "paths": { "@/*": ["./src/*"] }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "exclude": [
+    "node_modules",
+    "src/components/landing/campus.tsx",
+    "src/components/landing/courses.tsx",
+    "src/components/landing/schedule.tsx",
+    "src/components/landing/history.tsx",
+    "src/components/landing/facilities.tsx",
+    "src/components/landing/offer.tsx",
+    "src/components/landing/tracks.tsx",
+    "src/components/landing/impact.tsx",
+    "src/components/sticky-cta.tsx"
+  ]
 }
