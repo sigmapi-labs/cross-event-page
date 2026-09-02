@@ -27,7 +27,6 @@ export function BrandLogo({
       alt="CROSS SPORTS ACADEMY — 대한민국 체대입시의 표준"
       width={SIZE[variant].width}
       height={SIZE[variant].height}
-      unoptimized
       className={className ?? "h-9 w-auto md:h-10"}
       priority={variant !== "black"}
     />
