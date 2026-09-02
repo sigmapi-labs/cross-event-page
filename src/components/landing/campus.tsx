@@ -1,3 +1,4 @@
+// @ts-nocheck — unused previous layout; kept for reference
 import { campaign } from "@/content/campaign";
 import { Kicker } from "./kicker";
 
@@ -17,7 +18,7 @@ export function Campus() {
           <div>
             <Kicker text="위치" />
             <h2 className="mb-3.5 text-[26px] font-black leading-[1.15] tracking-[-0.03em] md:text-[44px]">
-              신규 분점
+              {campaign.branch.name}
               <br />
               새 기기, 같은 운영
             </h2>

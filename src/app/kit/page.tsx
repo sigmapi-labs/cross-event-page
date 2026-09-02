@@ -1,3 +1,4 @@
+import { BrandLogo } from "@/components/brand-logo";
 import { campaign } from "@/content/campaign";
 import { formatKoDate } from "@/lib/format";
 import { withUtm } from "@/lib/utm";
@@ -8,35 +9,35 @@ const POSTS = [
     channel: "인스타 릴스",
     who: "학생",
     utm: { source: "instagram", medium: "reels", campaign: "branch-open", content: "record" },
-    copy: `${campaign.branch.name} 오픈. 10월 수업 전면 무료로 기록부터 확인.\n${campaign.admissionYear} 수시·정시, 12월 전에 자리 잡기.\n링크에서 신청.`,
+    copy: `${campaign.branch.name} 오픈. 10월 수업 전면 무료로 기록부터 확인.\n평일 ${campaign.schedule.time}, 월–금 중 3일.\n${campaign.admissionYear} 수시·정시, 12월 전에 자리 잡기.\n링크에서 신청.`,
   },
   {
     channel: "카카오 채널",
     who: "학부모",
     utm: { source: "kakao", medium: "channel", campaign: "branch-open", content: "parent" },
-    copy: `${campaign.brand} ${campaign.branch.name} 오픈 행사입니다.\n${formatKoDate(campaign.offer.freeStart)}–${formatKoDate(campaign.offer.freeEnd)} 10월 수업 전면 무료.\n자동 결제 없고, 3주차 상담 후 등록을 결정합니다.\n선착순 ${campaign.offer.seats}명. ${formatKoDate(campaign.offer.applyDeadline)} 마감.`,
+    copy: `${campaign.brand} ${campaign.branch.name} 오픈 행사입니다.\n${formatKoDate(campaign.offer.freeStart)}–${formatKoDate(campaign.offer.freeEnd)} 10월 수업 전면 무료.\n자동 결제 없고, 등록한 경우만 11월부터 유료입니다.\n평일 ${campaign.schedule.time}, 월–금 중 3일. 상담 때 확정.`,
   },
   {
     channel: "유튜브 쇼츠",
     who: "탐색",
     utm: { source: "youtube", medium: "shorts", campaign: "branch-open", content: "lesson" },
-    copy: `강북·청량리에 이은 분점. ${campaign.offer.ratio} 수업, 시험장과 같은 측정.\n10월은 전면 무료, 11월부터 유료. 자세한 일정은 페이지.`,
+    copy: `강북·청량리에 이은 ${campaign.branch.name}. 체대TV 조샘 제자리멀리뛰기 직강, 시험장과 같은 측정.\n10월은 전면 무료, 11월부터 유료. 자세한 일정은 페이지.`,
   },
   {
     channel: "당근 · 로컬",
     who: "분점 반경",
     utm: { source: "local", medium: "community", campaign: "branch-open", content: "map" },
-    copy: `집 근처 체대입시 분점이 열립니다.\n10월 수업 전면 무료, 선착순 ${campaign.offer.seats}명.\n위치와 시간 확인 후 신청하세요.`,
+    copy: `${campaign.branch.name}이 열립니다.\n10월 수업 전면 무료. 평일 ${campaign.schedule.time}, 월–금 중 3일.\n위치와 시간 확인 후 신청하세요.`,
   },
 ];
 
 export default function KitPage() {
   return (
-    <div className="min-h-screen bg-paper">
+    <div className="min-h-screen bg-paper text-ink">
       <header className="border-b border-line bg-surface">
         <div className="mx-auto flex h-14 max-w-3xl items-center justify-between px-5">
-          <p className="text-[15px] font-semibold">{campaign.brand} SNS 키트</p>
-          <Link href="/" className="text-[13px] text-accent">
+          <BrandLogo variant="black" className="h-7 w-auto" />
+          <Link href="/" className="text-[13px] font-bold text-accent">
             랜딩으로
           </Link>
         </div>
@@ -66,9 +67,9 @@ export default function KitPage() {
         <section className="mt-12 border-t border-line pt-8">
           <h2 className="text-[18px] font-semibold">주간 리듬</h2>
           <ul className="mt-4 space-y-2 text-[14px] text-muted">
-            <li>월 · 잔여 슬롯 / D-day → 신청</li>
+            <li>월 · 10월 전면 무료 오퍼 → 신청</li>
             <li>화 · 기록 전후 클립 → 데이터</li>
-            <li>수 · 4:1 수업 15초 → 수업 방식</li>
+            <li>수 · 종목 팁 15초 → 수업 방식</li>
             <li>목 · 분점 시설·오는 길 → 위치</li>
             <li>금 · 학부모 FAQ → 카카오</li>
             <li>토 · 주간 기록회 → 신청</li>

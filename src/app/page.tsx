@@ -1,16 +1,17 @@
 import { ApplySection } from "@/components/landing/apply-section";
-import { Campus } from "@/components/landing/campus";
+import { Elite } from "@/components/landing/elite";
 import { Events } from "@/components/landing/events";
-import { Facilities } from "@/components/landing/facilities";
 import { Faq } from "@/components/landing/faq";
 import { SiteFooter } from "@/components/landing/footer";
 import { Hero } from "@/components/landing/hero";
-import { History } from "@/components/landing/history";
-import { ImpactStrip } from "@/components/landing/impact";
-import { Offer } from "@/components/landing/offer";
-import { Tracks } from "@/components/landing/tracks";
+import { Instructor } from "@/components/landing/instructor";
+import { Location } from "@/components/landing/location";
+import { Manpower } from "@/components/landing/manpower";
+import { Network } from "@/components/landing/network";
+import { Results } from "@/components/landing/results";
+import { Strategy } from "@/components/landing/strategy";
+import { Why } from "@/components/landing/why";
 import { SiteHeader } from "@/components/site-header";
-import { StickyCta } from "@/components/sticky-cta";
 
 export default function HomePage() {
   return (
@@ -18,18 +19,19 @@ export default function HomePage() {
       <SiteHeader />
       <main>
         <Hero />
-        <ImpactStrip />
-        <Tracks />
-        <Offer />
-        <Facilities />
-        <History />
+        <Why />
+        <Manpower />
         <Events />
-        <Campus />
+        <Instructor />
+        <Elite />
+        <Results />
+        <Strategy />
+        <Network />
         <Faq />
+        <Location />
         <ApplySection />
       </main>
       <SiteFooter />
-      <StickyCta />
     </div>
   );
 }

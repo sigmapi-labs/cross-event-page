@@ -28,14 +28,14 @@ export default function OgImage() {
         <div style={{ display: "flex", flexDirection: "column", gap: 18 }}>
           <div style={{ fontSize: 28, color: "#FF5C00" }}>{campaign.offer.freeLabel}</div>
           <div style={{ fontSize: 64, lineHeight: 1.15, fontWeight: 800, letterSpacing: -2 }}>
-            10월 수업, 전부 무료입니다.
+            10월 한 달, 전 수업 무료
           </div>
           <div style={{ fontSize: 28, color: "#8A847C", maxWidth: 820 }}>
-            26년 체대입시 · 최신 기기 · 선착순 {campaign.offer.seats}명
+            크로스 체대입시 신규 지점 오픈 기념 · 조샘 직강 · 디지털 측정 6종
           </div>
         </div>
         <div style={{ display: "flex", fontSize: 22, color: "#8A847C" }}>
-          {campaign.existingBranches.join(" · ")} 다음 캠퍼스
+          {campaign.existingBranches.join(" · ")} 다음 · {campaign.branch.name}
         </div>
       </div>
     ),

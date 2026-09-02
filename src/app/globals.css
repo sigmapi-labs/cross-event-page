@@ -150,6 +150,194 @@ button {
   }
 }
 
+.location-map {
+  background: #e6e1d6;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-reverse {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 100s linear infinite;
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse 200s linear infinite;
+}
+
+@keyframes float-soft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.animate-float-soft {
+  animation: float-soft var(--float-dur, 5.6s) ease-in-out infinite;
+  animation-delay: var(--float-delay, 0s);
+}
+
+.marquee-fade {
+  mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+}
+
+.manpower-stage {
+  --mx: 72%;
+  --my: 18%;
+}
+
+.manpower-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 85% 75% at 50% 35%, #000 35%, transparent 78%);
+}
+
+.manpower-spot {
+  background: radial-gradient(
+    680px circle at var(--mx) var(--my),
+    rgba(255, 92, 0, 0.26),
+    rgba(255, 92, 0, 0.07) 36%,
+    transparent 64%
+  );
+}
+
+.manpower-card {
+  --lx: 50%;
+  --ly: 40%;
+}
+
+.manpower-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  opacity: 0;
+  background: radial-gradient(
+    240px circle at var(--lx) var(--ly),
+    rgba(255, 92, 0, 0.2),
+    transparent 62%
+  );
+  pointer-events: none;
+  transition: opacity 220ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .manpower-card:hover {
+    border-color: #3a2418;
+  }
+
+  .manpower-card:hover::before {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-marquee-reverse,
+  .animate-float-soft {
+    animation: none;
+  }
+
+  .manpower-spot,
+  .manpower-card::before {
+    display: none;
+  }
+
+  .stat-card::before {
+    animation: none;
+    background: #ff5c00;
+    opacity: 0.45;
+  }
+}
+
+.network-closer {
+  white-space: nowrap;
+}
+
+@property --stat-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.stat-card {
+  position: relative;
+}
+
+.stat-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: conic-gradient(
+    from var(--stat-angle),
+    transparent 0 64%,
+    #ff5c00 78%,
+    #ff7a1a 88%,
+    transparent 100%
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  animation: stat-spin 2.8s linear infinite;
+  pointer-events: none;
+}
+
+.stat-card-alt::before {
+  animation-delay: -1.4s;
+}
+
+@keyframes stat-spin {
+  to {
+    --stat-angle: 360deg;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .stat-card:hover {
+    border-color: #ff5c00;
+    background: #1a0e00;
+    box-shadow: 0 0 22px rgba(255, 92, 0, 0.16);
+  }
+
+  .stat-card:hover::before {
+    animation: none;
+    background: #ff5c00;
+  }
+}
+
+@media (max-width: 639px) {
+  .network-closer {
+    white-space: normal;
+  }
+}
+
 ::-webkit-scrollbar {
   width: 4px;
 }

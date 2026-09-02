@@ -8,6 +8,7 @@ const Lead = z.object({
   phone: z.string().trim().min(8).max(20),
   grade: z.enum(campaign.grades),
   event: z.enum(campaign.events),
+  days: z.array(z.enum(campaign.weekdays)).length(campaign.schedule.daysPick),
   channel: z.string().trim().max(40).optional(),
   memo: z.string().trim().max(500).optional(),
   consent: z.union([z.literal("on"), z.literal("true"), z.boolean()]),

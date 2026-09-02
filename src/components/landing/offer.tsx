@@ -1,3 +1,4 @@
+// @ts-nocheck — unused previous layout; kept for reference
 import { campaign } from "@/content/campaign";
 import { Kicker } from "./kicker";
 

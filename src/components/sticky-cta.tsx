@@ -1,5 +1,6 @@
 "use client";
 
+import { ApplyScrollLink } from "@/components/apply-scroll-link";
 import { campaign } from "@/content/campaign";
 
 export function StickyCta() {
@@ -14,12 +15,9 @@ export function StickyCta() {
         >
           카카오 상담
         </a>
-        <a
-          href="#apply"
-          className="flex h-12 flex-1 items-center justify-center rounded-lg bg-accent text-[14px] font-bold text-white"
-        >
-          10월 무료 신청
-        </a>
+        <ApplyScrollLink className="flex h-12 flex-1 items-center justify-center rounded-lg bg-accent text-[14px] font-bold text-white">
+          {campaign.cta}
+        </ApplyScrollLink>
       </div>
     </div>
   );
