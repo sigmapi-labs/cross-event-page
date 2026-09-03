@@ -12,27 +12,24 @@ export function Strategy() {
         <h2 className="mb-4 max-w-[640px] text-[28px] font-black leading-[1.1] tracking-[-0.03em] md:text-[44px]">
           {strategy.title}
         </h2>
-        <p className="mb-12 max-w-[560px] text-[15px] leading-[1.75] text-paper-ink">{strategy.lead}</p>
+        <p className="mb-10 max-w-[560px] text-[15px] leading-[1.75] text-paper-ink">{strategy.lead}</p>
 
-        <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           {strategy.items.map((item) => (
-            <article key={item.n} className="overflow-hidden rounded-xl bg-ink text-paper">
-              <div className="relative aspect-[4/3]">
+            <article key={item.n} className="group overflow-hidden rounded-xl bg-white">
+              <div className="relative aspect-[16/10] overflow-hidden">
                 <Image
                   src={item.image}
                   alt={item.title}
                   fill
-                  className={`object-cover brightness-[0.68] contrast-110 ${item.pos}`}
+                  className={`object-cover origin-center transition duration-500 ease-out [@media(hover:hover)_and_(pointer:fine)]:motion-safe:group-hover:scale-[1.04] ${item.pos}`}
                   sizes="(min-width: 768px) 50vw, 100vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink from-10% to-transparent" />
-                <p className="absolute top-4 left-5 tabular text-[12px] font-bold tracking-[0.16em] text-accent">
-                  {item.n}
-                </p>
               </div>
-              <div className="px-6 pt-2 pb-7">
-                <h3 className="mb-3 text-[22px] font-black tracking-tight">{item.title}</h3>
-                <p className="text-[15px] leading-[1.75] text-muted">{item.body}</p>
+              <div className="px-5 py-5 md:px-6 md:py-6">
+                <p className="mb-2 tabular text-[11px] font-black tracking-[0.14em] text-accent">{item.n}</p>
+                <h3 className="mb-2 text-[20px] font-black tracking-tight md:text-[22px]">{item.title}</h3>
+                <p className="text-[14px] leading-[1.75] text-paper-ink md:text-[15px]">{item.body}</p>
               </div>
             </article>
           ))}

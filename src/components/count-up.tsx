@@ -90,10 +90,11 @@ export function CountUp({
           : undefined
       }
     >
-      <span className="inline-block text-left tabular-nums" style={{ minWidth: `${String(to).length}ch` }}>
-        {value}
+      <span className="inline-block text-left tabular-nums">
+        {value.toLocaleString("en-US")}
+        {unit === "+" ? "+" : null}
       </span>
-      {unit ? (
+      {unit && unit !== "+" ? (
         <span className="ml-1 text-[20px] font-bold text-paper md:text-[24px]">{unit}</span>
       ) : null}
     </span>

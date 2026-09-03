@@ -251,10 +251,42 @@ button {
   }
 }
 
+@keyframes event-cta-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.85);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(255, 255, 255, 0);
+  }
+}
+
+@keyframes event-note-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  50% {
+    transform: scale(1.06);
+    filter: brightness(1.15);
+  }
+}
+
+.event-cta {
+  animation: event-cta-pulse 1.8s ease-out infinite;
+}
+
+.event-seats-note {
+  animation: event-note-pulse 1.4s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-marquee,
   .animate-marquee-reverse,
-  .animate-float-soft {
+  .animate-float-soft,
+  .event-cta,
+  .event-seats-note {
     animation: none;
   }
 

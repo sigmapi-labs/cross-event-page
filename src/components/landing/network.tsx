@@ -20,15 +20,15 @@ export function Network() {
         <p className="mb-10 max-w-[580px] text-[16px] leading-[1.75] text-muted">{network.body}</p>
 
         <div className="grid grid-cols-1 gap-3 md:grid-cols-3">
-          <article className="relative min-h-[280px] overflow-hidden rounded-xl md:col-span-2 md:min-h-[340px]">
+          <article className="relative min-h-[280px] overflow-hidden rounded-xl md:col-span-2 md:min-h-[420px]">
             <Image
               src={featured.image}
               alt={featured.name}
               fill
-              className={`object-cover brightness-[0.55] contrast-110 ${featured.pos}`}
+              className={`object-cover brightness-[0.72] contrast-110 ${featured.pos}`}
               sizes="(min-width: 768px) 66vw, 100vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-ink from-10% via-ink/30 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink/80 from-5% via-ink/20 to-transparent" />
             <div className="absolute top-5 left-5">
               <span className="rounded-full bg-accent px-3 py-1 text-[11px] font-bold tracking-[0.12em] text-white">
                 {featured.tag}

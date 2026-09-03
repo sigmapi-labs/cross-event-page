@@ -17,11 +17,25 @@ function FaqItem({ q, a }: { q: string; a: string }) {
       >
         <span className="text-[14px] font-bold leading-snug md:text-[16px]">{q}</span>
         <span
-          className={`grid h-[30px] w-[30px] shrink-0 place-items-center rounded-full text-[20px] font-light transition-colors duration-300 ${
-            open ? "bg-accent text-white" : "bg-[#E8E4DC] text-muted"
+          aria-hidden
+          className={`relative h-[30px] w-[30px] shrink-0 rounded-full transition-colors duration-300 ${
+            open ? "bg-accent" : "bg-[#E8E4DC]"
           }`}
         >
-          <span className={`leading-none transition-transform duration-300 ease-out ${open ? "rotate-45" : ""}`}>+</span>
+          <span
+            className={`absolute inset-0 transition-transform duration-300 ease-out ${open ? "rotate-45" : ""}`}
+          >
+            <span
+              className={`absolute top-1/2 left-1/2 h-[1.5px] w-3 -translate-x-1/2 -translate-y-1/2 rounded-full ${
+                open ? "bg-white" : "bg-muted"
+              }`}
+            />
+            <span
+              className={`absolute top-1/2 left-1/2 h-3 w-[1.5px] -translate-x-1/2 -translate-y-1/2 rounded-full ${
+                open ? "bg-white" : "bg-muted"
+              }`}
+            />
+          </span>
         </span>
       </button>
       <div

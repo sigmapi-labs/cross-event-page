@@ -31,13 +31,13 @@ export function Why() {
       </div>
 
       <div className="mx-auto max-w-[1200px] px-5 md:px-6">
-        <div className="grid grid-cols-1 overflow-hidden rounded-xl bg-ink text-paper sm:grid-cols-3">
+        <div className="grid grid-cols-1 overflow-hidden rounded-xl bg-ink text-paper md:grid-cols-3">
           {why.stats.map((s, i) => (
             <div
               key={s.label}
-              className={`px-6 py-10 md:px-8 md:py-12 ${i > 0 ? "border-t border-hairline sm:border-t-0 sm:border-l" : ""}`}
+              className={`@container min-w-0 px-5 py-8 md:px-5 md:py-10 lg:px-8 lg:py-12 ${i > 0 ? "border-t border-hairline md:border-t-0 md:border-l" : ""}`}
             >
-              <p className="tabular text-[64px] font-black leading-none tracking-[-0.06em] text-accent md:text-[80px]">
+              <p className="tabular max-w-full overflow-hidden text-[clamp(2.75rem,20cqi,4.5rem)] font-black leading-none tracking-[-0.05em] whitespace-nowrap text-accent">
                 <CountUp
                   to={Number(s.n)}
                   duration={1500}

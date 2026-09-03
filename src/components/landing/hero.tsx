@@ -1,36 +1,60 @@
 import { ApplyScrollLink } from "@/components/apply-scroll-link";
 import { campaign } from "@/content/campaign";
-import Image from "next/image";
+
+const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
+function asset(path: string) {
+  return `${base}${path}`;
+}
 
 export function Hero() {
-  const { hero } = campaign;
+  const { hero, offer, cta } = campaign;
 
   return (
-    <section id="top" className="relative min-h-[520px] overflow-hidden bg-ink md:min-h-[800px]">
-      <Image
-        src="/images/facility/kbs-hall.jpg"
-        alt="KBS스포츠월드점 실기 훈련장"
-        fill
-        priority
-        className="object-cover object-center brightness-[0.72] contrast-110"
-        sizes="100vw"
-      />
-      <div className="absolute inset-0 bg-gradient-to-r from-ink from-[12%] via-ink/80 to-ink/25 md:via-ink/70 md:to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-ink/50" />
+    <>
+      <section id="top" className="bg-ink pt-16 md:pt-[72px]">
+        <video
+          className="mx-auto block aspect-video h-auto w-full max-w-[1280px] object-contain"
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster={asset(hero.poster)}
+        >
+          <source src={asset(hero.video)} type="video/mp4" />
+        </video>
+      </section>
 
-      <div className="relative z-10 mx-auto flex min-h-[520px] w-full max-w-[1200px] flex-col justify-end px-5 pt-24 pb-12 md:min-h-[800px] md:justify-center md:px-6 md:pt-[88px] md:pb-16">
-        <p className="mb-3 text-[11px] font-bold tracking-[0.2em] text-accent md:text-[12px]">{hero.kicker}</p>
-        <p className="mb-4 text-[15px] tracking-wide text-paper/80 md:text-[16px]">{hero.line}</p>
-        <h1 className="mb-5 text-[40px] font-black leading-[1.06] tracking-[-0.04em] md:text-[60px] lg:text-[68px]">
-          10월 한 달,
-          <br />
-          전 수업 <span className="text-accent">무료</span>
-        </h1>
-        <p className="mb-8 max-w-[460px] text-[14px] leading-[1.7] text-paper/75 md:text-[16px]">{hero.support}</p>
-        <ApplyScrollLink className="inline-flex h-12 w-fit items-center justify-center rounded-lg bg-accent px-8 text-[15px] font-bold tracking-wide text-white hover:bg-accent-hover">
-          {campaign.cta}
-        </ApplyScrollLink>
+      <div className="bg-ink">
+        <div className="mx-auto flex max-w-[1200px] flex-wrap items-center justify-center gap-x-3 gap-y-1 px-5 py-3.5 text-center md:justify-between md:px-6 md:py-4 md:text-left">
+          <p className="text-[12px] font-bold tracking-[0.16em] text-accent md:text-[13px]">{hero.eventKicker}</p>
+          <p className="text-[15px] font-black tracking-tight text-paper md:text-[18px]">{hero.eventName}</p>
+        </div>
       </div>
-    </section>
+
+      <div className="bg-accent text-ink">
+        <div className="mx-auto flex max-w-[1200px] flex-col items-stretch gap-5 px-5 py-6 md:flex-row md:items-center md:justify-between md:gap-8 md:px-6 md:py-7">
+          <div className="min-w-0 md:flex-1">
+            <p className="text-[26px] font-black leading-[1.15] tracking-[-0.03em] md:text-[36px] lg:text-[40px]">
+              {hero.offerLine}
+            </p>
+          </div>
+
+          <div className="event-seats flex shrink-0 items-center gap-3 rounded-lg bg-ink px-4 py-3 text-paper md:px-5 md:py-3.5">
+            <p className="tabular text-[28px] font-black leading-none tracking-tight md:text-[34px]">
+              {offer.seats}
+              <span className="ml-1 text-[15px] font-bold md:text-[17px]">{hero.seatsLabel}</span>
+            </p>
+            <span className="event-seats-note rounded-full bg-accent px-2.5 py-1 text-[11px] font-black tracking-tight text-white md:text-[12px]">
+              {hero.seatsNote}
+            </span>
+          </div>
+
+          <ApplyScrollLink className="event-cta inline-flex h-14 w-full shrink-0 items-center justify-center rounded-lg border-2 border-ink bg-paper px-8 text-[16px] font-black tracking-tight text-ink hover:bg-white md:h-16 md:w-auto md:px-10 md:text-[18px]">
+            {cta}
+          </ApplyScrollLink>
+        </div>
+      </div>
+    </>
   );
 }

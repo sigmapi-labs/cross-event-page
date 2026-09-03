@@ -1,4 +1,10 @@
-export default function imageLoader({ src }: { src: string }) {
+export default function imageLoader({
+  src,
+}: {
+  src: string;
+  width: number;
+  quality?: number;
+}) {
   if (src.startsWith("http://") || src.startsWith("https://") || src.startsWith("data:")) {
     return src;
   }

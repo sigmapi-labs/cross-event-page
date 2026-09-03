@@ -1,3 +1,4 @@
+import { CountUp } from "@/components/count-up";
 import { AdmitMarquee } from "@/components/landing/admit-marquee";
 import { campaign } from "@/content/campaign";
 import { Kicker } from "./kicker";
@@ -13,10 +14,11 @@ export function Results() {
           {results.title}
         </h2>
         <p className="tabular text-[96px] font-black leading-none tracking-[-0.06em] text-accent md:text-[140px]">
-          {results.n}
+          <CountUp to={Number(results.n)} duration={1600} unit={results.suffix} />
           <span className="ml-2 text-[28px] font-bold text-paper md:text-[36px]">{results.unit}</span>
         </p>
-        <div className="mt-6 mb-6 flex gap-2">
+        <p className="mt-5 text-[22px] font-black tracking-tight md:text-[26px]">{results.line}</p>
+        <div className="mt-8 flex gap-2">
           {results.years.map((y) => (
             <span
               key={y}
@@ -26,7 +28,7 @@ export function Results() {
             </span>
           ))}
         </div>
-        <p className="mb-3 text-[22px] font-black tracking-tight md:text-[26px]">{results.line}</p>
+        <p className="mt-5 mb-6 text-[16px] font-black tracking-tight md:text-[18px]">{results.recentLine}</p>
         <p className="max-w-[560px] text-[15px] leading-[1.75] text-muted">{results.body}</p>
       </div>
       <AdmitMarquee />

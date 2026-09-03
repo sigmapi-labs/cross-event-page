@@ -25,25 +25,18 @@ export function ApplySection() {
                 </span>
               ))}
             </div>
-            <div className="mb-9">
+            <div>
               <p className="mb-2 text-[12px] font-bold tracking-[0.12em] text-muted">{apply.inquiry}</p>
               <a href={campaign.phoneHref} className="tabular text-[28px] font-black tracking-tight md:text-[38px]">
                 {campaign.phone}
               </a>
             </div>
-            <a
-              href={campaign.googleFormUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex h-12 items-center justify-center rounded-lg bg-accent px-8 text-[15px] font-bold text-white hover:bg-accent-hover"
-            >
-              {campaign.cta}
-            </a>
           </div>
 
-          <div id="apply-form" className="glow-orange relative scroll-mt-24 rounded-xl bg-paper p-7 text-ink md:p-11">
-            <div className="absolute top-0 right-6 left-6 h-0.5 rounded bg-accent" />
-            <ApplyForm />
+          <div id="apply-form" className="glow-orange scroll-mt-24 rounded-xl bg-accent p-[2px]">
+            <div className="rounded-[10px] bg-paper p-7 text-ink md:p-11">
+              <ApplyForm />
+            </div>
           </div>
         </div>
       </div>
