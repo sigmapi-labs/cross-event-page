@@ -36,7 +36,7 @@ export function Instructor() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-ink from-5% via-ink/20 to-transparent" />
             <div className="absolute right-5 bottom-5 left-5">
-              <p className="text-[11px] font-bold tracking-[0.18em] text-accent">{instructor.channel}</p>
+              <p className="text-[16px] font-bold tracking-[0.16em] text-accent">{instructor.channel}</p>
               <p className="mt-1 text-[32px] font-black tracking-tight text-paper">{instructor.name}</p>
             </div>
           </div>

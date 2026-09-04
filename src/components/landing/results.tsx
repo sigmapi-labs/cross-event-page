@@ -13,22 +13,11 @@ export function Results() {
         <h2 className="mb-8 max-w-[640px] text-[28px] font-black leading-[1.1] tracking-[-0.03em] md:text-[48px]">
           {results.title}
         </h2>
-        <p className="tabular text-[96px] font-black leading-none tracking-[-0.06em] text-accent md:text-[140px]">
+        <p className="flex flex-nowrap items-baseline whitespace-nowrap text-[clamp(3.25rem,16vw,8.75rem)] font-black leading-none tracking-[-0.06em] text-accent md:text-[140px]">
           <CountUp to={Number(results.n)} duration={1600} unit={results.suffix} />
-          <span className="ml-2 text-[28px] font-bold text-paper md:text-[36px]">{results.unit}</span>
+          <span className="ml-1 text-[clamp(1.125rem,4.6vw,2.25rem)] font-bold text-paper md:ml-2 md:text-[36px]">{results.unit}</span>
         </p>
-        <p className="mt-5 text-[22px] font-black tracking-tight md:text-[26px]">{results.line}</p>
-        <div className="mt-8 flex gap-2">
-          {results.years.map((y) => (
-            <span
-              key={y}
-              className="rounded-full border border-hairline px-3.5 py-1.5 text-[12px] font-bold tracking-wide text-muted"
-            >
-              {y}
-            </span>
-          ))}
-        </div>
-        <p className="mt-5 mb-6 text-[16px] font-black tracking-tight md:text-[18px]">{results.recentLine}</p>
+        <p className="mt-5 mb-6 text-[22px] font-black tracking-tight md:text-[26px]">{results.line}</p>
         <p className="max-w-[560px] text-[15px] leading-[1.75] text-muted">{results.body}</p>
       </div>
       <AdmitMarquee />

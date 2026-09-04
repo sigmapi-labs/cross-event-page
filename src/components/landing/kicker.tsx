@@ -1,5 +1,6 @@
-export function Kicker({ text }: { text: string }) {
+export function Kicker({ text, className }: { text: string; className?: string }) {
   return (
-    <p className="mb-4 text-[11px] font-bold uppercase tracking-[0.2em] text-accent">{text}</p>
+    <p className={`mb-4 text-[16px] font-bold uppercase tracking-[0.16em] text-accent ${className ?? ""}`}>{text}</p>
   );
 }
+

@@ -25,7 +25,7 @@ function PointCard({
       onPointerMove={onMove}
       className="manpower-card relative overflow-hidden rounded-xl border border-hairline bg-[#111]/80 px-6 py-7"
     >
-      <p className="mb-3 tabular text-[12px] font-bold tracking-[0.16em] text-accent">
+      <p className="mb-3 tabular text-[16px] font-bold tracking-[0.16em] text-accent">
         {String(index).padStart(2, "0")}
       </p>
       <h3 className="mb-3 text-[20px] font-black tracking-tight">{title}</h3>
@@ -69,14 +69,12 @@ export function Manpower() {
             {manpower.campuses.map((c) => (
               <div
                 key={c.name}
-                className={`flex-1 rounded-xl border px-4 py-4 ${
-                  c.tag === "신규" ? "border-accent bg-[#1A0E00]/80" : "border-hairline bg-[#111]/70"
-                }`}
+                className="flex-1 rounded-xl border border-hairline bg-[#111]/70 px-3 py-4 md:px-4"
               >
-                <p className={`text-[10px] font-bold tracking-[0.14em] ${c.tag === "신규" ? "text-accent" : "text-muted"}`}>
+                <p className={`text-[15px] font-bold tracking-[0.14em] ${c.tag === "신규" ? "text-accent" : "text-muted"}`}>
                   {c.tag}
                 </p>
-                <p className="mt-2 text-[14px] font-black tracking-tight md:text-[16px]">{c.name}</p>
+                <p className="mt-2 break-keep text-[14px] font-black leading-snug tracking-tight md:text-[16px]">{c.name}</p>
               </div>
             ))}
           </div>

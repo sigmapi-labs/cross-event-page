@@ -12,7 +12,7 @@ export function Strategy() {
         <h2 className="mb-4 max-w-[640px] text-[28px] font-black leading-[1.1] tracking-[-0.03em] md:text-[44px]">
           {strategy.title}
         </h2>
-        <p className="mb-10 max-w-[560px] text-[15px] leading-[1.75] text-paper-ink">{strategy.lead}</p>
+        <p className="mb-10 max-w-[640px] whitespace-pre-line text-[15px] leading-[1.75] text-paper-ink">{strategy.lead}</p>
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           {strategy.items.map((item) => (
@@ -27,7 +27,7 @@ export function Strategy() {
                 />
               </div>
               <div className="px-5 py-5 md:px-6 md:py-6">
-                <p className="mb-2 tabular text-[11px] font-black tracking-[0.14em] text-accent">{item.n}</p>
+                <p className="mb-2 tabular text-[16px] font-black tracking-[0.14em] text-accent">{item.n}</p>
                 <h3 className="mb-2 text-[20px] font-black tracking-tight md:text-[22px]">{item.title}</h3>
                 <p className="text-[14px] leading-[1.75] text-paper-ink md:text-[15px]">{item.body}</p>
               </div>

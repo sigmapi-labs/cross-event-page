@@ -6,6 +6,14 @@ function easeOutCubic(t: number) {
   return 1 - (1 - t) ** 3;
 }
 
+function isOnScreen(el: Element) {
+  const r = el.getBoundingClientRect();
+  if (r.width === 0 && r.height === 0) return false;
+  const vh = window.innerHeight || document.documentElement.clientHeight;
+  const vw = window.innerWidth || document.documentElement.clientWidth;
+  return r.bottom > 0 && r.top < vh && r.right > 0 && r.left < vw;
+}
+
 export function CountUp({
   to,
   duration = 1400,
@@ -59,14 +67,16 @@ export function CountUp({
       rafRef.current = requestAnimationFrame(tick);
     };
 
+    const tryPlay = (entry?: IntersectionObserverEntry) => {
+      if (entry && !entry.isIntersecting) return;
+      if (!isOnScreen(el)) return;
+      play();
+      io.disconnect();
+    };
+
     const io = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          play();
-          io.disconnect();
-        }
-      },
-      { threshold: 0.45 },
+      ([entry]) => tryPlay(entry),
+      { threshold: 0.2, rootMargin: "0px 0px -8% 0px" },
     );
 
     io.observe(el);

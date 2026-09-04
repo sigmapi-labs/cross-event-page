@@ -13,46 +13,52 @@ export function Hero() {
   return (
     <>
       <section id="top" className="bg-ink pt-16 md:pt-[72px]">
-        <video
-          className="mx-auto block aspect-video h-auto w-full max-w-[1280px] object-contain"
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster={asset(hero.poster)}
-        >
-          <source src={asset(hero.video)} type="video/mp4" />
-        </video>
+        <div className="px-5 py-12 md:px-6 md:py-16">
+          <div className="mx-auto max-w-[1280px] overflow-hidden rounded-2xl">
+            <video
+              className="block aspect-video h-auto w-full object-contain"
+              autoPlay
+              muted
+              loop
+              playsInline
+              poster={asset(hero.poster)}
+            >
+              <source src={asset(hero.video)} type="video/mp4" />
+            </video>
+          </div>
+        </div>
       </section>
 
-      <div className="bg-ink">
-        <div className="mx-auto flex max-w-[1200px] flex-wrap items-center justify-center gap-x-3 gap-y-1 px-5 py-3.5 text-center md:justify-between md:px-6 md:py-4 md:text-left">
-          <p className="text-[12px] font-bold tracking-[0.16em] text-accent md:text-[13px]">{hero.eventKicker}</p>
-          <p className="text-[15px] font-black tracking-tight text-paper md:text-[18px]">{hero.eventName}</p>
-        </div>
-      </div>
-
       <div className="bg-accent text-ink">
-        <div className="mx-auto flex max-w-[1200px] flex-col items-stretch gap-5 px-5 py-6 md:flex-row md:items-center md:justify-between md:gap-8 md:px-6 md:py-7">
-          <div className="min-w-0 md:flex-1">
-            <p className="text-[26px] font-black leading-[1.15] tracking-[-0.03em] md:text-[36px] lg:text-[40px]">
-              {hero.offerLine}
+        <div className="mx-auto grid max-w-[1200px] grid-cols-1 gap-7 px-5 py-[28px] md:grid-cols-[1fr_min(46%,520px)] md:items-stretch md:gap-16 md:px-6">
+          <div className="flex min-w-0 flex-col justify-center">
+            <p className="text-[26px] font-black leading-[1.15] tracking-[-0.03em] md:text-[36px] lg:text-[44px]">
+              <span className="whitespace-pre-line md:hidden">{hero.offerLine.replace(", ", ",\n")}</span>
+              <span className="hidden md:inline">{hero.offerLine}</span>
+            </p>
+            <p className="mt-3 break-keep text-[15px] font-semibold tracking-tight md:text-[18px] lg:text-[20px]">
+              {campaign.branch.shortName} 오픈 기념{" "}
+              <strong className="font-black">{offer.seats}명</strong> 선착순!
             </p>
           </div>
-
-          <div className="event-seats flex shrink-0 items-center gap-3 rounded-lg bg-ink px-4 py-3 text-paper md:px-5 md:py-3.5">
-            <p className="tabular text-[28px] font-black leading-none tracking-tight md:text-[34px]">
-              {offer.seats}
-              <span className="ml-1 text-[15px] font-bold md:text-[17px]">{hero.seatsLabel}</span>
-            </p>
-            <span className="event-seats-note rounded-full bg-accent px-2.5 py-1 text-[11px] font-black tracking-tight text-white md:text-[12px]">
-              {hero.seatsNote}
-            </span>
+          <div className="relative flex w-full justify-end md:h-full">
+            <div className="relative w-full md:h-full md:w-1/2">
+              <div className="pointer-events-none absolute bottom-[calc(100%-1px)] left-1/2 -translate-x-1/2">
+                <div className="event-seats-bubble relative">
+                  <span className="inline-flex items-center whitespace-nowrap rounded-full bg-ink px-3 py-1 text-[12px] font-black leading-none tracking-tight text-white md:text-[13px]">
+                    {hero.seatsNote}
+                  </span>
+                  <span
+                    aria-hidden
+                    className="absolute top-full left-1/2 -mt-px -translate-x-1/2 border-x-[6px] border-t-[6px] border-x-transparent border-t-ink"
+                  />
+                </div>
+              </div>
+              <ApplyScrollLink className="event-cta flex h-12 w-full items-center justify-center rounded-lg bg-paper px-8 text-[16px] font-black tracking-tight !text-ink hover:bg-white md:h-full md:text-[24px] lg:text-[26px]">
+                {cta}
+              </ApplyScrollLink>
+            </div>
           </div>
-
-          <ApplyScrollLink className="event-cta inline-flex h-14 w-full shrink-0 items-center justify-center rounded-lg border-2 border-ink bg-paper px-8 text-[16px] font-black tracking-tight text-ink hover:bg-white md:h-16 md:w-auto md:px-10 md:text-[18px]">
-            {cta}
-          </ApplyScrollLink>
         </div>
       </div>
     </>

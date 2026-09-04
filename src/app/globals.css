@@ -52,9 +52,11 @@ body {
   overflow-x: hidden;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+@layer base {
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 }
 
 details summary {
@@ -261,15 +263,13 @@ button {
   }
 }
 
-@keyframes event-note-pulse {
+@keyframes event-bubble-float {
   0%,
   100% {
-    transform: scale(1);
-    filter: brightness(1);
+    transform: translateY(0);
   }
   50% {
-    transform: scale(1.06);
-    filter: brightness(1.15);
+    transform: translateY(-4px);
   }
 }
 
@@ -277,8 +277,52 @@ button {
   animation: event-cta-pulse 1.8s ease-out infinite;
 }
 
-.event-seats-note {
-  animation: event-note-pulse 1.4s ease-in-out infinite;
+.event-seats-bubble {
+  animation: event-bubble-float 2.1s ease-in-out infinite;
+}
+
+.event-belt {
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  border-top: 3px solid var(--accent);
+}
+
+.event-belt::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -18deg,
+    transparent,
+    transparent 11px,
+    rgba(255, 92, 0, 0.055) 11px,
+    rgba(255, 92, 0, 0.055) 12px
+  );
+  pointer-events: none;
+}
+
+.event-belt::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 40%;
+  background: linear-gradient(90deg, transparent, rgba(255, 92, 0, 0.12), transparent);
+  animation: event-belt-sweep 5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes event-belt-sweep {
+  0%,
+  18% {
+    transform: translateX(-120%);
+  }
+  58%,
+  100% {
+    transform: translateX(320%);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -286,7 +330,8 @@ button {
   .animate-marquee-reverse,
   .animate-float-soft,
   .event-cta,
-  .event-seats-note {
+  .event-seats-bubble,
+  .event-belt::after {
     animation: none;
   }
 

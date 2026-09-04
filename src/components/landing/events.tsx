@@ -1,5 +1,6 @@
 import { campaign } from "@/content/campaign";
 import Image from "next/image";
+import { FacilitySlider } from "./facility-slider";
 import { Kicker } from "./kicker";
 
 export function Events() {
@@ -33,7 +34,7 @@ export function Events() {
               </div>
               <div className="px-5 py-5">
                 <div className="mb-2 flex items-center gap-2">
-                  <span className="tabular text-[11px] font-black tracking-[0.14em] text-accent">{e.n}</span>
+                  <span className="tabular text-[16px] font-black tracking-[0.14em] text-accent">{e.n}</span>
                   <span className="text-[12px] font-bold text-muted">{e.measure}</span>
                 </div>
                 <h3 className="text-[18px] font-black tracking-tight md:text-[20px]">{e.name}</h3>
@@ -43,28 +44,7 @@ export function Events() {
           ))}
         </div>
 
-        <div className="relative mt-4 overflow-hidden rounded-xl md:mt-5">
-          <div className="relative min-h-[200px] md:min-h-[280px]">
-            <Image
-              src={measure.closerImage}
-              alt="시험장과 같은 실기 훈련장"
-              fill
-              className="object-cover object-center"
-              sizes="1200px"
-            />
-            <div className="relative z-[1] flex min-h-[200px] flex-col justify-end px-6 py-7 md:min-h-[280px] md:px-10 md:py-9">
-              <p className="mb-2 text-[11px] font-bold tracking-[0.18em] text-accent [text-shadow:0_1px_2px_rgba(0,0,0,0.8),0_2px_14px_rgba(0,0,0,0.55)]">
-                시험장 = 교실
-              </p>
-              <p className="text-[20px] font-black leading-snug tracking-tight text-white [text-shadow:0_1px_2px_rgba(0,0,0,0.85),0_4px_18px_rgba(0,0,0,0.6)] md:whitespace-nowrap md:text-[clamp(15px,2.2vw,28px)]">
-                {measure.closer}
-              </p>
-              <p className="mt-3 text-[13px] leading-relaxed font-medium text-white [text-shadow:0_1px_2px_rgba(0,0,0,0.85),0_3px_14px_rgba(0,0,0,0.55)] md:whitespace-nowrap md:text-[clamp(12px,1.55vw,15px)]">
-                {measure.closerSub}
-              </p>
-            </div>
-          </div>
-        </div>
+        <FacilitySlider images={measure.closerImages} title={measure.closer} sub={measure.closerSub} />
       </div>
     </section>
   );

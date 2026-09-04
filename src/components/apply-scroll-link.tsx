@@ -1,4 +1,4 @@
-"use client";
+import { campaign } from "@/content/campaign";
 
 export function ApplyScrollLink({
   children,
@@ -8,17 +8,7 @@ export function ApplyScrollLink({
   className?: string;
 }) {
   return (
-    <a
-      href="#apply"
-      className={className}
-      onClick={(e) => {
-        const el = document.getElementById("apply");
-        if (!el) return;
-        e.preventDefault();
-        el.scrollIntoView({ behavior: "smooth", block: "start" });
-        history.replaceState(null, "", "#apply");
-      }}
-    >
+    <a href={campaign.googleFormUrl} target="_blank" rel="noreferrer" className={className}>
       {children}
     </a>
   );

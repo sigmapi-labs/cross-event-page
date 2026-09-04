@@ -35,8 +35,6 @@ export const campaign = {
     mapQuery: "서울특별시 강서구 공항대로 376 KBS스포츠월드",
     lat: 37.5566134,
     lng: 126.8483674,
-    naverMapUrl: "https://map.naver.com/p/search/서울특별시%20강서구%20공항대로%20376%20KBS스포츠월드",
-    kakaoMapUrl: "https://map.kakao.com/link/map/KBS스포츠월드,37.5566134,126.8483674",
   },
   schedule: {
     start: "2026-10-01",
@@ -54,7 +52,7 @@ export const campaign = {
     freeStart: "2026-10-01",
     freeEnd: "2026-10-31",
     paidStart: "2026-11-01",
-    seats: 40,
+    seats: 50,
   },
   hero: {
     kicker: "크로스 체대입시 KBS스포츠월드점 오픈",
@@ -63,11 +61,11 @@ export const campaign = {
     support: "10월 1일부터 정규 수업이 시작됩니다. 한 달은 수강료가 없고, 등록은 11월에 선택하면 됩니다.",
     video: "/videos/hero.mp4",
     poster: "/images/facility/kbs-hall.jpg",
-    eventKicker: "KBS스포츠월드점 오픈 기념",
+    eventKicker: "KBS 스포츠월드점 오픈 기념",
     eventName: "10월 무료 수업 이벤트",
     offerLine: "10월 한 달, 실전형 수업 무료",
     seatsLabel: "명 선착순",
-    seatsNote: "조기마감 유의",
+    seatsNote: "조기 마감 유의",
   },
   why: {
     title: "왜 크로스 체대입시인가?",
@@ -76,7 +74,7 @@ export const campaign = {
     stats: [
       { n: "26", unit: "년", label: "검증된 커리큘럼", hint: "한 시즌용 프로그램이 아닙니다." },
       { n: "26", unit: "명", label: "전국 최다 규모 강사진", hint: "종목과 학교를 나눠 붙일 규모." },
-      { n: "2300", unit: "+", label: "역대 원생 배출", hint: "개원 이래 배출한 원생." },
+      { n: "1800", unit: "+", label: "합격자 배출", hint: "개원 이래 대학의 문을 넘은 숫자." },
     ],
   },
   manpower: {
@@ -86,12 +84,12 @@ export const campaign = {
     campuses: [
       { name: "강북본점", tag: "본원" },
       { name: "청량리점", tag: "기존" },
-      { name: "KBS점", tag: "신규" },
+      { name: "KBS 스포츠월드점", tag: "신규" },
     ],
     points: [
       {
         title: "본원 포함 3개 지점",
-        body: "강북본점, 청량리점, 새로 여는 KBS점. 세 곳이 같은 강사진 네트워크를 씁니다. 분점이어도 기준은 본원입니다.",
+        body: "강북본점, 청량리점, 새로 여는 KBS 스포츠월드점. 세 곳이 같은 강사진 네트워크를 씁니다. 분점이어도 기준은 본원입니다.",
       },
       {
         title: "전국 최다 규모 강사 포진",
@@ -103,7 +101,7 @@ export const campaign = {
       },
       {
         title: "본원 출신 베테랑",
-        body: "크로스 본원에서 수십 년 합격 노하우를 전수받은 강사진입니다. KBS점에서 듣는 수업도 본원의 손입니다.",
+        body: "크로스 본원에서 수십 년 합격 노하우를 전수받은 강사진입니다. KBS 스포츠월드점에서 듣는 수업도 본원의 손입니다.",
       },
     ],
   },
@@ -111,9 +109,14 @@ export const campaign = {
     title: "실전형 환경",
     kicker: "100% 디지털 측정",
     body: "감각으로 때우는 코칭은 시험장에서 통하지 않습니다. 모든 측정 기구를 최신식으로 갖추고, 대학 입시 현장과 같은 기준으로 측정합니다.",
-    closer: "실제 대학교 입시 현장과 100% 유사한 환경에서 훈련합니다.",
-    closerSub: "장비만 비슷하면 끝이 아닙니다. 측정 규정, 동작 기준, 기록 내는 방식까지 시험장과 같게 맞춥니다.",
-    closerImage: "/images/facility/exam-hall.jpg",
+    closer: "실제 입시 현장과 100% 유사한 환경에서 훈련합니다.",
+    closerSub: "장비만 비슷하면 끝이 아닙니다. 시험장과 같은 환경입니다.",
+    closerImages: [
+      "/images/facility/exam-hall.jpg",
+      "/images/facility/kbs-arena.jpg",
+      "/images/facility/kbs-hall.jpg",
+      "/images/facility/kbs-studio.jpg",
+    ],
   },
   instructor: {
     name: "조샘",
@@ -128,8 +131,8 @@ export const campaign = {
   },
   elite: {
     title: "소수정예",
-    lead: "기초는 동작을 고정하는 시간이고, 종목은 기록을 올리는 시간입니다. 사람이 많으면 둘 다 무너집니다.",
-    body: "10명이 넘는 다수:1 수업은 하지 않습니다. 한 타임에 손이 가는 인원을 정해 두고, 그 선을 넘기지 않습니다.",
+    lead: "기초는 동작을 고정하는 시간이고, 종목은 기록을 올리는 시간입니다.\n사람이 많으면 둘 다 무너집니다.",
+    body: "10명이 넘는 다수:1 수업은 하지 않습니다.\n한 타임에 손이 가는 인원을 정해 두고, 그 선을 넘기지 않습니다.",
     items: [
       {
         n: "2:1",
@@ -156,11 +159,11 @@ export const campaign = {
     recentN: "86",
     recentLine: "최근 2년 86명 합격",
     years: ["2025", "2026"],
-    body: "한 시즌의 운이 아닙니다. 26년간 1800명 이상이 대학의 문을 넘었고, 최근 2년에도 86명이 붙었습니다. 측정 데이터로 약점을 나누고, 종목별로 붙여서 만든 결과입니다.",
+    body: "한 시즌의 운이 아닙니다. 26년간 1800명 이상이 대학의 문을 넘었습니다. 측정 데이터로 약점을 나누고, 종목별로 붙여서 만든 결과입니다.",
   },
   strategy: {
     title: "크로스만의 독보적 합격 전략",
-    lead: "기초만 반복하거나, 팁만 던지고 끝내지 않습니다. 측정하고, 고치고, 매주 시험장 기준으로 다시 측정합니다.",
+    lead: "기초만 반복하거나, 팁만 던지고 끝내지 않습니다.\n측정하고, 고치고, 매주 시험장 기준으로 다시 측정합니다.",
     items: [
       {
         n: "01",
@@ -228,9 +231,9 @@ export const campaign = {
   },
   apply: {
     kicker: "1개월 무료 수업 사전 예약",
-    headline: "10월 한 달, KBS스포츠월드점 전 수업 무료",
+    headline: "10월 한 달,\nKBS스포츠월드점 전 수업 무료",
     inquiry: "문의사항",
-    body: "체험 한 타임이 아닙니다. 10월 정규 수업을 무료로 듣고, 등록은 11월에 선택하면 됩니다. 강제 결제 없습니다.",
+    body: "체험 한 타임이 아닙니다. 10월 정규 수업을 무료로 듣고, 등록은 11월에 선택하면 됩니다.",
     points: ["신규 지점만 10월 무료", "평일 19:00–21:30", "하루 안에 연락"],
   },
   proof: ["체대TV 조샘 직강", "입시 현장 100%", "디지털 측정 6종"],
@@ -248,7 +251,7 @@ export const campaign = {
       n: "01",
       name: "메디신볼 던지기",
       measure: "상체 파워 · 협응력",
-      tip: "상체 파워는 각도에서 갈린다",
+      tip: "상체 파워는 각도에서 갈립니다.",
       image: "/images/events/01-medicine-ball.jpg",
       pos: "object-center",
     },
@@ -256,7 +259,7 @@ export const campaign = {
       n: "02",
       name: "윗몸일으키기",
       measure: "코어 근지구력",
-      tip: "개수가 아니라 규정 동작이다",
+      tip: "개수가 아니라 규정 동작입니다.",
       image: "/images/events/02-sit-up.jpg",
       pos: "object-[center_42%]",
     },
@@ -264,7 +267,7 @@ export const campaign = {
       n: "03",
       name: "제자리멀리뛰기",
       measure: "폭발력 · 하체",
-      tip: "30년 조샘이 직접 본다",
+      tip: "30년 조샘이 직접 봅니다.",
       image: "/images/events/03-long-jump.jpg",
       pos: "object-[center_40%]",
       badge: "조샘 직강",
@@ -273,7 +276,7 @@ export const campaign = {
       n: "04",
       name: "서전트 점프",
       measure: "수직 도약",
-      tip: "체공이 아니라 도달 높이다",
+      tip: "체공이 아니라 도달 높이입니다.",
       image: "/images/events/04-sergeant-jump.jpg",
       pos: "object-center",
     },
@@ -281,7 +284,7 @@ export const campaign = {
       n: "05",
       name: "왕복달리기",
       measure: "민첩성 · 순발력",
-      tip: "0.01초는 턴에서 나온다",
+      tip: "0.01초는 턴에서 나옵니다.",
       image: "/images/events/05-shuttle-run.jpg",
       pos: "object-center",
     },
@@ -289,7 +292,7 @@ export const campaign = {
       n: "06",
       name: "사이드스텝",
       measure: "측면 민첩성",
-      tip: "보폭보다 중심 이동이다",
+      tip: "보폭보다 중심 이동입니다.",
       image: "/images/events/06-side-step.jpg",
       pos: "object-[center_45%]",
     },
@@ -298,14 +301,14 @@ export const campaign = {
   faq: [
     {
       q: "진짜 무료인가요?",
-      a: "네! 신규 오픈하는 KBS점 단독 프로모션으로 10월 1일 ~ 31일까지 수강료 0원에 실전 수업을 체험하실 수 있습니다. (의무 등록 조건 없음)",
+      a: "네! 신규 오픈하는 KBS 스포츠월드점 단독 프로모션으로 10월 1일 ~ 31일까지 수강료 0원에 실전 수업을 체험하실 수 있습니다. (의무 등록 조건 없음)",
     },
     {
       q: "무료 수업이 끝나면 어떻게 되나요?",
       a: "체험 종료 후 본인 희망에 따라 정규반으로 전환 가능하며, 사전 예약자에 한해 혜택이 있을 수 있습니다.",
     },
     {
-      q: "KBS점 시설이 본점과 다른가요?",
+      q: "KBS 스포츠월드점 시설이 본점과 다른가요?",
       a: "본점의 30년 합격 노하우를 그대로 가져왔으며, 모든 측정 기구가 새 제품으로 구비되어 있습니다.",
     },
     {
@@ -314,7 +317,7 @@ export const campaign = {
     },
     {
       q: "정원에 제한이 있나요?",
-      a: "네, 크로스는 대규모 집체 수업 대신 밀착 케어를 위해 클래스별 정원이 있습니다. (약 40명) 선호 요일은 빠르게 마감될 수 있으니 빠른 예약을 권장합니다.",
+      a: "네, 크로스는 대규모 집체 수업 대신 밀착 케어를 위해 클래스별 정원이 있습니다. (약 50명) 선호 요일은 빠르게 마감될 수 있으니 빠른 예약을 권장합니다.",
     },
     {
       q: "실기 기초나 체력이 전혀 없는 초보자도 괜찮나요?",
